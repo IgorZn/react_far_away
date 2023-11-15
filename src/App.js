@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Logo from "./components/Logo";
+import Form from "./components/Form";
+import PackingList from "./components/PackingList";
+import Stats from "./components/Stats";
+import {useState} from "react";
+import {createInitialItems} from "./fakeData";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [obj, setObj] = useState(createInitialItems);
+
+
+    return (
+        <div className="container-fluid">
+            <Logo/>
+            <Form setItems={setObj}/>
+            <PackingList items={obj} setItems={setObj}/>
+            <Stats />
+        </div>
+    );
 }
 
 export default App;
