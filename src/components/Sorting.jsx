@@ -1,7 +1,8 @@
 import React from 'react';
+import ClearModal from "./ClearModal";
 
 function Sorting(props) {
-    const { sort, setSort } = props
+    const { sort, setSort, setItems } = props
     const handleSort = (e) => {
       setSort(e.target.value)
     }
@@ -13,7 +14,7 @@ function Sorting(props) {
                 <option value="description">Sort by description</option>
                 <option value="packed">Sort by packed</option>
             </select>
-            <button className={"py-2"}>Clear</button>
+            <ClearModal setItems={setItems}/>
         </>
     );
 }

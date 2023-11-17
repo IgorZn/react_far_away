@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import {createInitialItems} from "../fakeData";
 import Sorting from "./Sorting";
 
 
@@ -52,7 +51,7 @@ function PackingList(props) {
                         ))}
                     </ul>
                     <div className={"sort"}>
-                        <Sorting sort={sortBy} setSort={setSortBy}/>
+                        <Sorting sort={sortBy} setSort={setSortBy} setItems={setItems}/>
                     </div>
                 </div>
             </div>
